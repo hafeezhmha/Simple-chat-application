@@ -1,5 +1,5 @@
 $(function () {
-    const socket = io('socket.io-client');
+    const socket = io();
     const $activeUsers = $('#active-users');
     const $chatMessages = $('#chat-messages');
     const $messageForm = $('#message-form');
