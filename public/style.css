@@ -69,3 +69,10 @@ button {
   font-style: italic;
   margin: 10px 0;
 }
+/* Online users count */
+#online-users {
+  margin-top: auto; /* Push to the bottom */
+  color: #999;
+  text-align: center;
+  padding: 10px;
+}

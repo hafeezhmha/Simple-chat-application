@@ -1,7 +1,6 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
-
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
@@ -19,10 +18,12 @@ io.on('connection', (socket) => {
         activeUsers[socket.id] = username;
 
         io.emit('active-users', Object.values(activeUsers));
+        io.emit('online-users-count', Object.keys(activeUsers).length); // Emit online users count
 
         socket.on('disconnect', () => {
             delete activeUsers[socket.id];
             io.emit('active-users', Object.values(activeUsers));
+            io.emit('online-users-count', Object.keys(activeUsers).length); // Update online users count
             console.log('A user disconnected');
         });
 
