@@ -1,0 +1,4 @@
+# render.yaml
+
+buildCommand: npm install
+publishDir: ./
